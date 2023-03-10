@@ -24,3 +24,8 @@ async function start() {
 
 //пакет для автоматической документации
 // npm i @nestjs/swagger swagger-ui-express
+
+//команды для генерации файлов через CLI
+//nest generate service
+//nest generate module
+//nest generate controller
