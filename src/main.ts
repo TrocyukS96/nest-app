@@ -29,3 +29,9 @@ async function start() {
 //nest generate service
 //nest generate module
 //nest generate controller
+
+// пакет для работы с JWT-токеном + пакет для шифрования поролей
+//npm i @nestjs/jwt bcryptjs
+
+//сервис, в котором можно декодировать токен
+//jwt.io

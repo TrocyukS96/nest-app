@@ -16,11 +16,19 @@ export class UsersService {
     //тут необходимо указать что эта роль принадлежит пользователю
     //метод $set позволяет перезаписать какое-то поле и обновить сразу внутри БД
     await user.$set('roles',[role.id])
+    //Добавляем роль пользователю напрямую
+    user.roles = [role]
     return user;
   }
 
   async getAllUsers() {
     const users = await this.userRepository.findAll({include:{all:true}});
     return users
+  }
+
+  //проверяем есть ли пользователь в БД
+  async getUserByEmail(email:string){
+    const user = await this.userRepository.findOne({where:{email},include:{all:true}})
+    return user;
   }
 }
